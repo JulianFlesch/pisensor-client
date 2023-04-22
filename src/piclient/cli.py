@@ -16,8 +16,9 @@ def main():
     # Looping
     # mqtt_client.loop_forever()        
     
-    for topic, data in pi_client.read_all_sensors():
-        publish(topic, data, hostname=config.broker)
+    for topic, payload in pi_client.read_all_sensors():
+        print("[Info] Publishing to topic %s on %s" % (topic, config["broker"]))
+        publish.single(topic, payload, hostname=config["broker"])
 
 if __name__ == "main":
     main()

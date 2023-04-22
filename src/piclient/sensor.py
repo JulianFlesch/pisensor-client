@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from .config import Config
 
 class Sensor(ABC):
 
@@ -11,6 +12,10 @@ class Sensor(ABC):
     @abstractmethod
     def topic(self):
         pass
+
+    def __init__(self, config=None):
+        
+        self.config = config if isinstance(config, Config) else Config()
 
     @abstractmethod
     def readout(self):

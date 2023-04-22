@@ -2,8 +2,9 @@ from .config import Config
 from .camera import Camera
 
 class Client:
-    sensor_choices = dict(
-        ("Camera", Camera),)
+    sensor_choices = dict([
+        ("Camera", Camera)
+    ])
     
     actor_choices = dict()
 
@@ -21,7 +22,7 @@ class Client:
     def _init_sensors(self):
         initialized = []
 
-        for s in self.config.installed_sensors:
+        for s in self.config["installed_sensors"]:
             if s in self.sensor_choices.keys():
                 sensor = self.sensor_choices[s](self.config)
                 
@@ -37,7 +38,7 @@ class Client:
     def _init_actors(self):
         initialized = []
 
-        for a in self.config.installed_actors:
+        for a in self.config["installed_actors"]:
             if a in self.actor_choices.keys():
                 actor = self.actor_choices[a]()
 
@@ -53,6 +54,7 @@ class Client:
     def read_all_sensors(self):
         readouts = []
         for sensor in self._sensors:
+            print("[Info] Reading %s" % sensor.name)
             readouts.append((sensor.topic, sensor.readout()))
             sensor.cleanup()
 
