@@ -1,4 +1,3 @@
-import config
 from .sensor import Sensor
 from picamera import PiCamera
 import tempfile
@@ -9,10 +8,11 @@ class Camera(Sensor):
     name = "Camera"
     topic = "image"
 
-    def __init__(self) -> None:
+    def __init__(self, config) -> None:
+        self.config = config
         self.value = None
-        self.resolution = config.camera_resolution
-        self.wait_time = config.camera_wait
+        self.resolution = self.config.camera_resolution
+        self.wait_time = self.config.camera_wait
 
     def get_outfile(self):
         timestamp = time.ctime().replace(" ", "_")
