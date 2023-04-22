@@ -18,7 +18,7 @@ classifiers = [
 ]
 dependencies=[
     "paho-mqtt",
-    #"picamera"
+    "picamera"
 ]
 
 [project.scripts]
