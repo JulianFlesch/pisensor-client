@@ -4,6 +4,19 @@ THIS IS WORK IN PROGRESS.
 
 This is the client to used to collect data from a variety of sensors, without individual setup and transmission via mqtt.
 
+## Pre-Requisites
+
+The RaspiCamera must be enabled!
+To build on the raspi, virtualenv is required:
+```
+sudo apt-get install python3-virtualenv
+```
+
+To use the temperature sensor:
+- Add support for OneWire by editing the boot config file at `/boot/config.txt` to add `dtoverlay=w1-gpio` to the last line (reboot required)
+- 
+
+
 ## Installation
 
 ```

@@ -1,9 +1,11 @@
 from .config import Config
 from .camera import Camera
+from .temperature import Temperature
 
 class Client:
     sensor_choices = dict([
-        ("Camera", Camera)
+        ("Camera", Camera),
+        ("Temperature", Temperature)
     ])
     
     actor_choices = dict()
