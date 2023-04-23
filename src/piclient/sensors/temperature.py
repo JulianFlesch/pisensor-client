@@ -35,7 +35,7 @@ class Temperature(Sensor):
         w1_temp = list(filter(lambda x: x.startswith(self._ds18b20_dir_prefix),
                               os.listdir(self._w1_devices_dir)))
         
-        if not len(w1_temp) != 1:
+        if len(w1_temp) != 1:
             raise RuntimeError("DS18B20 temperature readout directory not found")
         
         else:
