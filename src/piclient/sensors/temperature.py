@@ -1,4 +1,4 @@
-from sensor import Sensor
+from .base import Sensor
 import os
 
 class Temperature(Sensor):
@@ -47,6 +47,7 @@ class Temperature(Sensor):
                 readout = int(readout)
                 # convert to celsius
                 readout = readout / 1000
+                self.value = readout
             return readout
 
     def cleanup(self):

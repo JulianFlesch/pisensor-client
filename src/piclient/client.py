@@ -1,6 +1,6 @@
 from .config import Config
-from .camera import Camera
-from .temperature import Temperature
+from .sensors import Camera
+from .sensors import Temperature
 
 class Client:
     sensor_choices = dict([
