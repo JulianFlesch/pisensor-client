@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "piclient"
-version = "0.2.2"
+version = "0.3.0"
 authors = [
   { name="JF", email="jf@foo.bar" },
 ]

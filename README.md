@@ -12,10 +12,13 @@ To build on the raspi, virtualenv is required:
 sudo apt-get install python3-virtualenv
 ```
 
-To use the temperature sensor:
+To use the temperature sensor ([tutorial](https://pimylifeup.com/raspberry-pi-temperature-sensor/)):
 - Add support for OneWire by editing the boot config file at `/boot/config.txt` to add `dtoverlay=w1-gpio` to the last line (reboot required)
-- 
-
+- Read the sensors once manually: 
+    ```
+    sudo modprobe w1-gpio
+    sudo modprobe w1-therm
+    ```
 
 ## Installation
 

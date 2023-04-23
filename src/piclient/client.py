@@ -1,11 +1,11 @@
 from .config import Config
-from .sensors import Camera
-from .sensors import Temperature
+from .sensors import Camera,Temperature, BinarySoilHumidty
 
 class Client:
     sensor_choices = dict([
         ("Camera", Camera),
-        ("Temperature", Temperature)
+        ("Temperature", Temperature),
+        ("BinarySoilHumidity", BinarySoilHumidty)
     ])
     
     actor_choices = dict()

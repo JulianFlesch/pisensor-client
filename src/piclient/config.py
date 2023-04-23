@@ -22,7 +22,10 @@ class Config(UserDict):
 
         # camera settings
         ("camera_resolution", "1024,768", lambda x: [int(i) for i in x.split(",")]),
-        ("camera_wait", "2", lambda x: int(x))
+        ("camera_wait", "2", lambda x: int(x)),
+
+        # binary soil humidity settings
+        ("bin_soil_humidity_channel", "1", lambda x: int(x)),
     ]
     
     def __init__(self):
